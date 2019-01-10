@@ -43,7 +43,7 @@ abstract class AbstractApi implements PmgApiInterface
     {
         $ch = curl_init();
         if ('GET' === $method) {
-            curl_setopt($ch, CURLOPT_URL, self::BASE_URL.$endpoint.http_build_query($params));
+            curl_setopt($ch, CURLOPT_URL, self::BASE_URL.$endpoint.'?'.http_build_query($params));
         } else {
             curl_setopt($ch, CURLOPT_URL, self::BASE_URL.$endpoint);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $params);

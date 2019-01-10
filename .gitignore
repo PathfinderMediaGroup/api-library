@@ -2,3 +2,5 @@
 /vendor
 /test.php
 /.php_cs.cache
+/bin
+/tests/testToken
