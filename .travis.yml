@@ -19,7 +19,7 @@ install:
   - composer install
 
 script:
-  - echo "${BEAST_KEY}" > tests/testToken
+  - echo "$BEAST_KEY" > tests/testToken
 
   # Run PHPUnit
   - bin/phpunit --bootstrap vendor/autoload.php --configuration phpunit.xml --fail-on-warning
