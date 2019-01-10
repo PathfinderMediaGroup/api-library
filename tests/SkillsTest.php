@@ -11,11 +11,9 @@ class SkillsTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        $handle      = fopen('tests/testToken', 'r');
-        $this->token = trim(fread($handle, filesize('tests/testToken')));
-        fclose($handle);
-        $auth      = new \PathfinderMediaGroup\ApiLibrary\Auth\TokenAuth($this->token);
-        $this->api = new \PathfinderMediaGroup\ApiLibrary\Api\SkillApi($auth);
+        $this->token = getenv('BEAST_KEY');
+        $auth        = new \PathfinderMediaGroup\ApiLibrary\Auth\TokenAuth($this->token);
+        $this->api   = new \PathfinderMediaGroup\ApiLibrary\Api\SkillApi($auth);
     }
 
     public function testGet()
