@@ -42,16 +42,19 @@ abstract class AbstractApi implements PmgApiInterface
     protected function makeRequest(string $endpoint, array $params = [], string $method = 'GET')
     {
         $ch = curl_init();
+
         if ('GET' === $method) {
             curl_setopt($ch, CURLOPT_URL, self::BASE_URL.$endpoint.'?'.http_build_query($params));
         } else {
             curl_setopt($ch, CURLOPT_URL, self::BASE_URL.$endpoint);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         }
+
         $headers = [
             'Content-Type:application/json',
             'Authorization: Basic '.$this->auth->getRequestToken(),
         ];
+
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: woeler
- * Date: 10/01/19
- * Time: 14:53.
- */
 
 namespace PathfinderMediaGroup\ApiLibrary\Api;
 
