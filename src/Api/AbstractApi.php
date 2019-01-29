@@ -23,6 +23,7 @@ abstract class AbstractApi implements PmgApiInterface
      * AbstractApi constructor.
      *
      * @param TokenAuth $auth
+     * @param bool      $returnAssoc
      */
     public function __construct(TokenAuth $auth, bool $returnAssoc = true)
     {
