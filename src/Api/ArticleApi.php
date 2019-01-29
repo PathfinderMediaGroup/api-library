@@ -17,7 +17,7 @@ class ArticleApi extends AbstractApi
      */
     public function getRecent(int $limit = 25, $only = [], $exclude = []): array
     {
-        $data = $this->makeRequest($this->scopeEndpoint.'/list', [
+        $data = $this->makeRequest($this->scopeEndpoint, [
             'limit'   => $limit,
             'only'    => $only,
             'exclude' => $exclude,
