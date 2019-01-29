@@ -5,7 +5,7 @@ class SkilllinesTest extends \PHPUnit\Framework\TestCase
     private $token;
 
     /**
-     * @var \PathfinderMediaGroup\ApiLibrary\Api\SkillApi
+     * @var \PathfinderMediaGroup\ApiLibrary\Api\SkilllineApi
      */
     private $api;
 

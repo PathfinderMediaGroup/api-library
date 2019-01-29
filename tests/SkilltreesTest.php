@@ -5,7 +5,7 @@ class SkilltreesTest extends \PHPUnit\Framework\TestCase
     private $token;
 
     /**
-     * @var \PathfinderMediaGroup\ApiLibrary\Api\SkillApi
+     * @var \PathfinderMediaGroup\ApiLibrary\Api\SkilltreeApi
      */
     private $api;
 
