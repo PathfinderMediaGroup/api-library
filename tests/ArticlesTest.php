@@ -22,6 +22,7 @@ class ArticlesTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('title', $article);
         $this->assertArrayHasKey('date', $article);
         $this->assertArrayHasKey('image', $article);
+        $this->assertTrue(count($article) <= 20);
     }
 
     public function testGetWithOnly()
