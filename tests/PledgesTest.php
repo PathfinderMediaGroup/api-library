@@ -25,17 +25,17 @@ class PledgesTest extends \PHPUnit\Framework\TestCase
     {
         $pledges = $this->api->get();
         $this->assertEquals(4, count($pledges));
-        $this->assertEquals(4, count($pledges['en']));
-        $this->assertEquals(4, count($pledges['de']));
-        $this->assertEquals(4, count($pledges['fr']));
+        $this->assertEquals(3, count($pledges['en']));
+        $this->assertEquals(3, count($pledges['de']));
+        $this->assertEquals(3, count($pledges['fr']));
     }
 
     public function testInDays()
     {
         $pledges = $this->api->get(5);
         $this->assertEquals(4, count($pledges));
-        $this->assertEquals(4, count($pledges['en']));
-        $this->assertEquals(4, count($pledges['de']));
-        $this->assertEquals(4, count($pledges['fr']));
+        $this->assertEquals(3, count($pledges['en']));
+        $this->assertEquals(3, count($pledges['de']));
+        $this->assertEquals(3, count($pledges['fr']));
     }
 }
