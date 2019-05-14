@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
+ */
+
 namespace PathfinderMediaGroup\ApiLibrary\Api;
 
 class CrownstoreItemApi extends AbstractApi
@@ -17,6 +24,6 @@ class CrownstoreItemApi extends AbstractApi
     {
         $data = $this->makeRequest($this->scopeEndpoint.'/search', ['query' => $query]);
 
-        return json_decode($data, $this->returnAssoc) ?? [];
+        return json_decode($data, true) ?? [];
     }
 }

@@ -1,10 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: woeler
- * Date: 10/01/19
- * Time: 15:22.
+
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
  */
+
 class SetsTest extends \PHPUnit\Framework\TestCase
 {
     private $token;
@@ -22,6 +24,13 @@ class SetsTest extends \PHPUnit\Framework\TestCase
     }
 
     public function testGet()
+    {
+        $set = $this->api->getByEsoId(728);
+        $this->assertArrayHasKey('name', $set);
+        $this->assertArrayHasKey('bonus_item_2', $set);
+    }
+
+    public function testGetByEsoId()
     {
         $set = $this->api->get(20);
         $this->assertArrayHasKey('name', $set);

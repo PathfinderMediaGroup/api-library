@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
+ */
+
 namespace PathfinderMediaGroup\ApiLibrary\Api;
 
 use PathfinderMediaGroup\ApiLibrary\Auth\TokenAuth;
@@ -23,12 +30,10 @@ abstract class AbstractApi implements PmgApiInterface
      * AbstractApi constructor.
      *
      * @param TokenAuth $auth
-     * @param bool      $returnAssoc
      */
-    public function __construct(TokenAuth $auth, bool $returnAssoc = true)
+    public function __construct(TokenAuth $auth)
     {
-        $this->auth        = $auth;
-        $this->returnAssoc = $returnAssoc;
+        $this->auth = $auth;
     }
 
     /**
@@ -63,7 +68,7 @@ abstract class AbstractApi implements PmgApiInterface
         $code   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-        if ($code < 200 || $code >= 400) {
+        if (200 > $code || 400 <= $code) {
             throw new FailedPmgRequestException($output, $code);
         }
 

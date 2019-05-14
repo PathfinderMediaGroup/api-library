@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
+ */
+
 class ArticlesTest extends \PHPUnit\Framework\TestCase
 {
     private $token;
@@ -22,7 +29,7 @@ class ArticlesTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('title', $article);
         $this->assertArrayHasKey('date', $article);
         $this->assertArrayHasKey('image', $article);
-        $this->assertTrue(count($article) <= 20);
+        $this->assertTrue(20 >= count($article));
     }
 
     public function testGetWithOnly()

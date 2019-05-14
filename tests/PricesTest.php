@@ -1,10 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: woeler
- * Date: 10/01/19
- * Time: 17:00.
+
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
  */
+
 class PricesTest extends \PHPUnit\Framework\TestCase
 {
     private $token;

@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the PMG Api Library project.
+ * @copyright Pathfinder Media Group. All rights reserved
+ *
+ * Please see the license attached to this project.
+ */
+
 class DevTrackerTest extends \PHPUnit\Framework\TestCase
 {
     private $token;
@@ -22,6 +29,6 @@ class DevTrackerTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('name', $devtracker[0]);
         $this->assertArrayHasKey('author', $devtracker[0]);
         $this->assertArrayHasKey('body', $devtracker[0]);
-        $this->assertTrue(count($devtracker) <= 20);
+        $this->assertTrue(20 >= count($devtracker));
     }
 }
