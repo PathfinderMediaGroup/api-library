@@ -26,7 +26,7 @@ class PricesTest extends \PHPUnit\Framework\TestCase
     public function testSearch()
     {
         $items = $this->api->search('grain solvent');
-        $this->assertEquals(2, count($items));
+        $this->assertEquals(1, count($items));
 
         $items = $this->api->search('skjdgkjdsjn kjsdjnkgd');
         $this->assertEquals(0, count($items));
