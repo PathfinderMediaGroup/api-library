@@ -32,7 +32,7 @@ class SetsTest extends \PHPUnit\Framework\TestCase
 
     public function testGetByEsoId()
     {
-        $set = $this->api->getByEsoId(728);
+        $set = $this->api->getByEsoId(40);
         $this->assertArrayHasKey('name', $set);
         $this->assertArrayHasKey('bonus_item_2', $set);
     }
