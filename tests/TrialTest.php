@@ -32,9 +32,19 @@ class TrialTest extends TestCase
         $this->assertArrayHasKey('name', $trial);
     }
 
-    public function testGetAll()
+    public function testGetLeaderboard()
     {
         $board = $this->api->getLeaderboard(1);
+        $rank  = array_pop($board);
+        $this->assertArrayHasKey('name', $rank);
+        $this->assertArrayHasKey('userid', $rank);
+        $this->assertArrayHasKey('rank', $rank);
+        $this->assertArrayHasKey('score', $rank);
+    }
+
+    public function testGetLeaderboardWithZosId()
+    {
+        $board = $this->api->getLeaderboard(1000, true);
         $rank  = array_pop($board);
         $this->assertArrayHasKey('name', $rank);
         $this->assertArrayHasKey('userid', $rank);
