@@ -28,12 +28,17 @@ class TrialApi extends AbstractApi
 
     /**
      * @param int $trialId
+     * @param bool $useZosId
      * @return array
      * @throws FailedPmgRequestException
      */
-    public function getLeaderboard(int $trialId): array
+    public function getLeaderboard(int $trialId, bool $useZosId = false): array
     {
-        $data = $this->makeRequest($this->scopeEndpoint.'/'.$trialId);
+        if ($useZosId) {
+            $data = $this->makeRequest($this->scopeEndpoint . '/' . $trialId . '?useZosId=1');
+        } else {
+            $data = $this->makeRequest($this->scopeEndpoint . '/' . $trialId);
+        }
 
         return json_decode($data, true) ?? [];
     }
