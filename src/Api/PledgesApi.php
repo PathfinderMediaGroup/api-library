@@ -22,7 +22,7 @@ class PledgesApi extends AbstractApi
      */
     public function get(int $daysFromNow = 0): array
     {
-        $data = $this->makeRequest($this->scopeEndpoint, ['daysFormNow' => $daysFromNow]);
+        $data = $this->makeRequest($this->scopeEndpoint, ['daysFromNow' => $daysFromNow]);
 
         return json_decode($data, true) ?? [];
     }
